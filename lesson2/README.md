@@ -139,7 +139,7 @@ commonjs---> 模块只在第一次加载的时候运行一次，模块会被存�
     如果找不到，报错
   ```
  
-[参考文献](http://www.infoq.com/cn/articles/nodejs-module-mechanism/)
+[参考文献 朴灵大神的文章](http://www.infoq.com/cn/articles/nodejs-module-mechanism/)
 # 3.包和npm
 还有一种特殊的文件模块，其实就是包
 - 问题：你开的一个功能模块，还是以文件的形式散列的，你给别人使用的时候很麻烦。
