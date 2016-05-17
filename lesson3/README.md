@@ -1,34 +1,38 @@
-#node-lesson2
-#1.解决几个问题？
-##1.前端、后端都是干什么的？ 
-Html、js、jquery、css等等组成文件资源
-Java、.net、php、node.js 文件操作、操作服务器硬件
-##2.为什么学习node.js？
-Node.js本身有价值，
-学习node.js市场价值
-##3.什么是JavaScript？
-脚步语言
-嵌套在html页面里面
-##4.浏览器中的JavaScript可以做什么？
-操作dom
-提交表单
-与服务端交互
-##5.浏览器中的JavaScript不可以做什么？
-不可以操作文件
-不可以操作我们的硬件
-##6.浏览器与JavaScript是什么关系？
-Js依赖于我们的浏览器
-汽车引擎 转化  可移植性
-Js引擎 转化js 字节码 机器码  可移植性
-##7.JavaScript只可以运行在浏览器中吗？
-Js靠我们的js引擎解析
-Node.js运行js  node给V8引擎包一层壳，黑匣子
-##8.Node.js的定义
-Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
-Node.js是一个基于v8引擎的运行时平台（运行环境的平台）
-特点
-event-driven model ：事件驱动模型
-non-blocking I/O model ：无阻塞的io模型
-lightweight 轻量 代码少，移植性好，
-windows、linux、mac
-efficient 高效
+#node-lesson3
+#1.复习
+###1.1模块的分类
+
+```模块分为文件模块、核心模块，其中包是一种特殊的文件模块 ```
+
+###1.2require
+
+- require的实现原理
+
+```把代码从文件中读出来，用匿名函数的方式头尾包装，返回modules.exports对象，曝露出想要曝露出来的属性、方法、对象。
+   补充了exports是指向modules.exports的一个指针，exports能做的，modules.exports都能做的。 
+```
+
+- require查找文件、包原理
+
+```.js、.node、.json依次帮你补足，
+   第二次加载的时候优先从缓存查找读取，
+   node_modules中没有的，从父文件夹中查找，如果没有，直到根目录为止
+```
+###1.3包
+```
+   package.json是包的说明书，
+   dependencies当前包所依赖的包：>、<、>=、<=、~、*、" "、X、^
+
+```
+###1.4npm
+```
+  npm init  创建package.json文件
+  npm install  将package.json中的文件依赖的包从网上下载到本地
+  npm install -save 包名  将包下载下来并且加载到dependencies中去
+  npm install -save-dev 包名 将包下载下来并且加载到devDependencies中去
+  npm install -g 包名 全局安装
+  npm docs 包名 查看包的文档
+  
+```
+
+
