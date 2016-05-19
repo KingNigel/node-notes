@@ -60,7 +60,6 @@
 在一个进程内部，有很多的线程
 ```
 ###2.5node的事件驱动模型？
-```
+![Alt text](https://github.com/KingNigel/node-notes/blob/master/lesson3/pic/event-loop.png)
 
-```
 
