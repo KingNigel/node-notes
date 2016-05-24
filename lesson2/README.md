@@ -150,9 +150,23 @@ commonjs---> 模块只在第一次加载的时候运行一次，模块会被存�
 - 包结构
 - 包描述文件package.json
   + 描述你的当前的包的一些相关的信息
+  +dependencies  
+   -  > +版本号 大于这个版本号
+   -  < +版本号 小于这个版本号
+   -  <= 小于等于
+   -  >= 大于等于
+   -   *、""、X 随意
+   -   ~ +版本号  在这个版本的附近加载版本
+   -   ^ +版本号  
+       ^ 1.X.X  表示1.X.X至不大于2.0.0之间的最高版本
+       ^ 0.X.X  表示1.X.X至不大于2.0.0之间的最高版本
+
+  [参考文献 package.json全字段解析](http://blog.csdn.net/woxueliuyun/article/details/39294375)
+
 
 ## 3.2 包的加载机制
 - module.paths属性，里面存储价值
+
 
 ## 3.2 package.json
 
@@ -161,4 +175,43 @@ commonjs---> 模块只在第一次加载的时候运行一次，模块会被存�
 package.json文件内部就是一个JSON对象，该对象的每一个成员就是当前项目的一项设置，
 比如name就是项目名称，version就是项目的版本号
 
-在模块的加载机制中，有一个main属性是非常重要的，它很大意义上决定了包要曝露模块位置
+在模块的加载机制中，有一个main属性是非常重要的，它很大意义上决定了包要导出的模块位置
+
+## 3.3
+
+# npm
+- 基于Node.js开发的包的托管网站
+- Node.js包管理工具
+
+npm :基于包的规范实现的一个包管理工具
+
+- npm install 包名
+
+当执行npm install的时候，它会自动跑到npm的网站，然后找到该包的github地址，
+找到之后，下载这个压缩包，然后在执行npm install的当前目录下找一个叫做node_modules目录
+如果找到，直接解压这个压缩包，到node_modules目录下
+如果找不到，则新建一个node_modules目录，解压到该目录
+
+- npm install
+
+当执行npm install的时候，会自动在当前目录中查找package.json文件
+如果找到，找里面的 dependencies 字段，安装该字段中所有依赖的项
+
+- npm install --save
+咱们以后在做项目的时候，先初始化一个package.json文件，
+在安装第三方包依赖的时候，必须使用npm install --save express,添加依赖项到package.json文件中，
+实际就是添加到dependencies字段中
+
+# npm 这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理
+
+# 4.process进程对象
+process是全局对象，不用加载，在任何模块中的任何位置都可以使用
+process就表示当前正在执行的Node.js应用程序，退出之后就没有了
+
+- process.argv
+  + 第一个参数就是node的可执行文件的绝对路径
+  + 第二个参数就是通过node命令执行的js脚本的绝对路径
+
+# 其它
+
+- vsc教程[http://i5ting.github.io/vsc/](vsc教程)
