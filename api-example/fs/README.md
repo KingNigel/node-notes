@@ -6,7 +6,7 @@ mode标识了access要判断的内容是文件的存在、还是rwx（读、写�
 不传默认为0。 
 ```
 ```javascript
-//mode的参数
+//mode的参数与linux下rwx的代号一致
 const fs=require("fs");
 console.log(fs.F_OK);//0 默认的，判断文件是否存在
 console.log(fs.X_OK);//1 linux下的文件是否可执行属性
@@ -52,7 +52,42 @@ fs.appendFile的同步方法
 ```javascript
 fs.appendFile('foo.txt', 'data to append','utf8');
 ```
+###fs.chmod(path, mode, callback)
+```
+修改改文件权限,mode值和linux里chmod设置权限的值一样，
+例如777、776
+```
+```javascript
+fs.chmod('foo.txt',777,(err) => {
+  if (err) throw err;
+});
+```
 
+###fs.chmodSync(path, mode)
+```
+fs.chmod的同步方法
+```
+```javascript
+fs.chmod('foo.txt',777);
+```
+
+###fs.chown(path, uid, gid, callback)
+```
+将指定文件的拥有者改为指定的用户或组，uid用户id，gid组id
+```
+```javascript
+fs.chown('content.txt', 'KingNigel', 'itcast', function(err){
+   if(err){console.log(err);}
+})
+```
+fs.chmodSync(path, mode)
+```
+fs.chown的同步方法
+```
+```javascript
+fs.chown('content.txt', 'KingNigel', 'itcast');
+```
+#标记写的进度
 ###fs.unlink(path, callback)
 ```
  删除文件
