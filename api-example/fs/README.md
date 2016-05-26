@@ -80,14 +80,31 @@ fs.chown('content.txt', 'KingNigel', 'itcast', function(err){
    if(err){console.log(err);}
 })
 ```
-fs.chmodSync(path, mode)
+###fs.chmodSync(path, mode)
 ```
 fs.chown的同步方法
 ```
 ```javascript
 fs.chown('content.txt', 'KingNigel', 'itcast');
 ```
-#标记写的进度
+
+###fs.close(fd, callback)
+```
+于fs.open配合使用，关闭fs.open()打开的文件,
+callback可选参数。
+```
+```javascript
+fs.close(fd);
+```
+###fs.closeSync(fd)
+```
+于fs.open配合使用，关闭fs.open()打开的文件,
+callback可选参数。
+```
+```javascript
+fs.close(fd);
+```
+#标记api编写的进度
 ###fs.unlink(path, callback)
 ```
  删除文件
