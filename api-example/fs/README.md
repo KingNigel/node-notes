@@ -98,11 +98,15 @@ fs.close(fd);
 ```
 ###fs.closeSync(fd)
 ```
-于fs.open配合使用，关闭fs.open()打开的文件,
-callback可选参数。
+fs.close的同步方法
 ```
 ```javascript
-fs.close(fd);
+fs.closeSync(fd);
+```
+###fs.createReadStream(path,[options])
+```
+返回一个ReadStream的对象。
+
 ```
 #标记api编写的进度
 ###fs.unlink(path, callback)
