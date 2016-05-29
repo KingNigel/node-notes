@@ -74,5 +74,42 @@
 多个线程处理程序提高效率，开发起来逻辑太复杂，对开发人员的要求较高。
 
 ```
-#文件操作
+#4.文件操作
+###4.1箭头函数
+```
+语法糖，一种语法，我们用这种语法可以尝到甜头。
+有一个参数有返回
+ var f=function (v) {
+     return v;
+ }
+var f=v=>v;
+没有参数有返回
+var f=function () {
+     return 5;
+ }
+var f=()=>5;
+有多个参数没有返回
+var f=function (v1，v2) {
+    console.log(v1);
+    console.log(v2);
+ }
+var f=(v1,v2)=>{
+    console.log(v1);
+    console.log(v2);
+}
+
+```
+   
+###4.1文件的完整读写
+```
+fs操作文件---》读写文件----》io----》node适合高io
+fs能体现出node的强大、优势的模块
+```
+- fs.readFile() 读文件
+- fs.access() 用来判断文件是否存在
+- fs.writeFile()  写文件
+- fs.appendFile() 在文件的内部去追加写一些内容
+- fs.mkdir() 创建文件夹
+
+
 
