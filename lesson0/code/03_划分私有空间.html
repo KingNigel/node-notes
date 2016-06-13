@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03划分私有空间</title>
+    <script type="text/javascript">
+      //命名函数自执行的方式，可以保护私有的属性和方法。
+      //解决命名冲突的问题
+       var  calculator=(function(){
+        var count=10;
+         var add=function (x,y){
+           return x+y;
+        }
+        var substract=function(x,y){
+            return x-y;
+        }
+        var multiply=function(x,y){
+            return x*y;
+        }
+        var divide=function(x,y){
+
+            return x/y;
+        }
+        return {
+          add:add,
+          substract:substract,
+          multiply:multiply,
+          divide:divide
+         }
+       })();
+       console.log(calculator.add(1,2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

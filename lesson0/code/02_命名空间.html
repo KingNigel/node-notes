@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02命名空间</title>
+    <script type="text/javascript">
+    //提供代码的简单的封装,不能解决命名冲突的问题，不能使代码有私有的变量和属性
+        
+
+       var  calculator={};
+        calculator.count=123;
+        calculator.add=function (x,y){
+           return x+y;
+        }
+        calculator.substract=function(x,y){
+            return x-y;
+        }
+        calculator.multiply=function(x,y){
+            return x*y;
+        }
+
+        calculator.divide=function(x,y){
+            return x/y;
+        }
+    
+        console.log(calculator.count);
+
+       calculator.add=function(x,y){
+
+          return x-y;
+       }
+        
+       console.log(calculator.add(1,2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

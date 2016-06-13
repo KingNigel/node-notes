@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04扩展和维护模块</title>
+    <script type="text/javascript">
+      //命名函数自执行的方式，可以保护私有的属性和方法。
+      //解决命名冲突的问题
+       var  calculator=(function(){
+        var count=10;
+         var add=function (x,y){
+           return x+y;
+        }
+        var substract=function(x,y){
+            return x-y;
+        }
+        var multiply=function(x,y){
+            return x*y;
+        }
+        var divide=function(x,y){
+
+            return x/y;
+        }
+        return {
+          add:add,
+          substract:substract,
+          multiply:multiply,
+          divide:divide
+         }
+       })();
+       //扩展模块，在不改变原来模块的前提下扩展
+        // 先去判断一下window对象里面有没有这个模块，有则传入，没有传入空对象
+        // 鲁棒性，是代码更健壮，容错性更高。
+       var calculator=(function (cal) {
+          cal.mod=function (x,y) {
+            return x%y;
+          }
+          return cal;
+       })(window.calculator||{})
+       console.log(calculator.mod(5,2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
