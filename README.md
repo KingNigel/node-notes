@@ -6,3 +6,4 @@
 - [第四课笔记](https://github.com/KingNigel/node-notes/tree/master/lesson4)
 - [第五课笔记](https://github.com/KingNigel/node-notes/tree/master/lesson5)
 - [第六课笔记](https://github.com/KingNigel/node-notes/tree/master/lesson6)
+- [第七课笔记](https://github.com/KingNigel/node-notes/tree/master/lesson7)
