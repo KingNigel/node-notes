@@ -54,12 +54,20 @@
 ### 整体感知
 
 ### 定义模块 define
-
+- 定义模块 define(function(){})
+- 函数体内的方法属性都属于这个方法，对外有封装性;解决了命名冲突问题，使js代码有了封装性
+- 
 ### 启动模块 seajs.use
 
+- 加载入口模块，我们把define定义的js就叫模块
+- 这个用于在html代码里面的加载
+
 ### 加载模块 require
+-加载文件依赖、模块依赖的，用于define函数体内
 
 ### 暴露接口 exports 和 module.exports
+- module.exports曝露出一个完整的对象，只能扔一次只能曝露出来一个
+- exports是module.exports的别名，可以用来单个属性、方法、对象的曝露，用.的形式,exports能做的事情module.exports也可以做
 
 ### 高级配置
 
