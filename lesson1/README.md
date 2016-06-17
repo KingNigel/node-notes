@@ -1,8 +1,8 @@
 #node-lesson1
 #1.解决几个问题？
 ##1.前端、后端都是干什么的？ 
-Html、js、jquery、css等等组成文件资源
-Java、.net、php、node.js 文件操作、操作服务器硬件
+- Html、js、jquery、css等等组成文件资源
+- Java、.net、php、node.js 文件操作、操作服务器硬件
 ##2.为什么学习node.js？
 Node.js本身有价值，
 学习node.js市场价值
