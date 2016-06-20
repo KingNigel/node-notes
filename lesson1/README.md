@@ -188,15 +188,50 @@ C:\Users\iroc\Desktop\code\seajs\a>
 
 
 ## Global
+global和window很像，都是全局对象
+### console
+```
+断言 是用来测试用的
+断言就是假定一个条件，如果条件成立则不输出任何内容，如果条件不成立则报错还要输出想要输出的内容。
+console.assert(条件,条件不成立输出的内容);
+console.assert(res==3,"失败");
+time() timeEnd()成对出现，计算在两个方法中间的代码的运行时间，传入的参数要一致
+console.time('test');
+代码~~~~~
+console.timeEnd('test');
+```
 
 ### __dirname 和 __filename
+```
+__dirnamee 用来找到当前文件夹的路径
+__filename 用来去到当前文件的路径
+不知道代码要才哪使用的时候，用于灵活的写代码取路径的时候。
+```
 
-它们属于模块作用域，可以直接使用
-它们两个用来获取路径的，一般用于操作文件路径的时候，才会用到
+### process
+```
+process 是一个全局可用对象，用来和我们现在启动中的node进行交互的
 
-## process
+process.version取版本号
+在控制台做标准输出
+process.stdout.write(`123123`);
 
-process 是一个全局可用对象，可以在任何地方使用
-
-- process.argv
-  + 可以通过该属性，获取命令台输入的一些参数
+process.pid：当前进程的进程号。
+process.version：Node的版本，比如v0.10.18。
+process.platform：当前系统平台，比如Linux。
+process.title：默认值为“node”，可以自定义该值。
+process.argv：当前进程的命令行参数数组。
+process.env：指向当前shell的环境变量，比如process.env.HOME。
+process.execPath：运行当前进程的可执行文件的绝对路径。
+process.stdout：指向标准输出。
+process.stdin：指向标准输入。
+process.stderr：指向标准错误。
+```
+## 模块系统
+### node.js模块化
+```
+一个js文件在node里面我们就理解为一个模块
+require用来加载模块
+module.exports用来曝露属性和方法的，因为模块有封装性，需要打破封装性曝露方法和属性来
+exports是module.exports的别名，exports可以做的事情，module.exports都可以做，exports只能用.的形式曝露属性和方法
+```
