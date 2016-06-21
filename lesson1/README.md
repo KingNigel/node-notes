@@ -1,31 +1,31 @@
 #node-lesson1
-#1.解决几个问题？
-##1.前端、后端都是干什么的？ 
+##1.解决几个问题？
+###1.前端、后端都是干什么的？ 
 - Html、js、jquery、css等等组成文件资源
 - Java、.net、php、node.js 文件操作、操作服务器硬件
 
-##2.为什么学习node.js？
+###2.为什么学习node.js？
 Node.js本身有价值，
 学习node.js市场价值
-##3.什么是JavaScript？
+###3.什么是JavaScript？
 脚步语言
 嵌套在html页面里面
-##4.浏览器中的JavaScript可以做什么？
+###4.浏览器中的JavaScript可以做什么？
 操作dom
 提交表单
 与服务端交互
-##5.浏览器中的JavaScript不可以做什么？
+###5.浏览器中的JavaScript不可以做什么？
 不可以操作文件
 不可以操作我们的硬件
-##6.浏览器与JavaScript是什么关系？
+###6.浏览器与JavaScript是什么关系？
 Js依赖于我们的浏览器
 汽车引擎 转化  可移植性
 Js引擎 转化js 字节码 机器码  可移植性
-##7.JavaScript只可以运行在浏览器中吗？
+###7.JavaScript只可以运行在浏览器中吗？
 Js靠我们的js引擎解析
 Node.js运行js  node给V8引擎包一层壳，黑匣子
 
-##8.什么是 Node?
+##什么是 Node?
 
 - [https://nodejs.org/en/]()
 - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. 
@@ -53,53 +53,15 @@ Node.js运行js  node给V8引擎包一层壳，黑匣子
 
 Node 是一个可以解析和执行 JavaScript 代码的 运行时环境
 
-- Node.js 的作者叫什么？
+- Node.js 的作者
   + 瑞恩.达尔
-
-- Node.js 是 JavaScript 吗？
-  + Node.js 不是 JavaScript ， Node.js 不是一种 语言
-  + Node.js 不是 框架、库
-  + Node.js 是一个可以解析和执行 JavaScript 代码的一个运行时环境
-
-##9.Chrome 浏览器的实现结构
-
-- Webkit 渲染、布局引擎
-- V8 JavaScript 解析执行引擎   语言本身指  ECMAScript
-- 中间层（DOM、BOM） 浏览器暴露出来的接口
-- 硬件层
 
 ### Node 的实现结构
 - V8 JavaScript 解析执行引擎   ECMAScript
 - 中间层 （提供了文件操作、网络操作登陆接口）更加接近操作系统的接口供开发人员使用
 - 硬件层
 
-
-### Node 可以做什么
-
-- 操作文件（创建、删除、修改、读取）
-- 提供Web服务（在Node中可以接收客户端的请求了）
-- Node 可以 开发一些 命令行工具软件
-- Node 可以 开发动态网站（有用户业务交互的功能Web站点）
-  + 用户登陆
-  + 用户注册
-  + 添加购物车
-  + 商品的展示
-- Node 可以帮我们 把之前 所写的 静态页面  -> 动态化
-- Node.js 再也不需要操作DOM、BOM了，再也不需要写HTML、css 不需要关系 兼容性的问题
-- Node.js 编程实际上就是在 写 JavaScript 代码，关心的是业务功能
-- 操作持久化数据
-- 可以开发 命令台 工具软件
-
-### Node.js 和 PHP 有什么区别？
-
-- 它们都能操作文件，都有和操作系统底层打交道的 API
-- 它们都可以进行网络操作，网络服务
-- PHP 需要和 Apache 结合起来才能提供 Web服务
-- Node.js 摒弃了以往所有的 服务器
-  + Node.js 可以独立作为一个服务器来使用
-- Java、PHP、.net 能做的事儿，Node.js 基本都能做，而且在某一方面比它们还要做的好
-
-### 谁在使用 Node
+###谁在使用 Node
 
 国内一些创业公司用用的比较多，功夫熊（做上门保健的，美甲、按摩）
 国外的一些大公司都有使用：Facebook、Twitter、Google
