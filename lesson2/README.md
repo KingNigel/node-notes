@@ -141,7 +141,7 @@ commonjs---> 模块只在第一次加载的时候运行一次，模块会被存�
   ```
  
 [参考文献 朴灵大神的文章](http://www.infoq.com/cn/articles/nodejs-module-mechanism/)
-# 3.包和npm
+# 3.包
 还有一种特殊的文件模块，其实就是包
 - 问题：你开的一个功能模块，还是以文件的形式散列的，你给别人使用的时候很麻烦。
 - 包的作用：在模块的基础上进一步组织JavaScript代码
@@ -150,22 +150,19 @@ commonjs---> 模块只在第一次加载的时候运行一次，模块会被存�
 - 包结构
 - 包描述文件package.json
   + 描述你的当前的包的一些相关的信息
-  +dependencies  
-   -  > +版本号 大于这个版本号
-   -  < +版本号 小于这个版本号
-   -  <= 小于等于
-   -  >= 大于等于
-   -   *、""、X 随意
-   -   ~ +版本号  在这个版本的附近加载版本
-   -   ^ +版本号  
-       ^ 1.X.X  表示1.X.X至不大于2.0.0之间的最高版本
-       ^ 0.X.X  表示1.X.X至不大于2.0.0之间的最高版本
+  +dependencies 
+   -  包名：“版本号” 
+   -  > +版本号   下载大于某个版本号，npm会下最新版
+   -  < +版本号   下载小于某个版本号，npm会下小于这个版本号最新版
+   -  <= 小于等于 一定会下你写的这个版本，除非没有你写的这个版本
+   -  >= 大于等于  下载最新版
+   -   *、" "、X  任意 npm会给你下最新版
+   -   ~ +版本号  会去下约等于这个版本的最新版，在大版本不变的情况下下一个比较新的版本
+   -   ^ +版本号  不跃迁版本下载，^2.1.0 npm会下载大版本不变，去下载2.x.x版本里的最近版
+   
+  
 
   [参考文献 package.json全字段解析](http://blog.csdn.net/woxueliuyun/article/details/39294375)
-
-
-## 3.2 包的加载机制
-- module.paths属性，里面存储价值
 
 
 ## 3.2 package.json
@@ -201,17 +198,59 @@ npm :基于包的规范实现的一个包管理工具
 咱们以后在做项目的时候，先初始化一个package.json文件，
 在安装第三方包依赖的时候，必须使用npm install --save express,添加依赖项到package.json文件中，
 实际就是添加到dependencies字段中
+[参考文献 npm的命令](https://docs.npmjs.com/)
+
 
 # npm 这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理
+# nvm npm nrm
+## 3m
+```
+   nvm node版本的管理工具
+   npm node的包管理工具
+   nrm npm的数据源管理工具
 
-# 4.process进程对象
-process是全局对象，不用加载，在任何模块中的任何位置都可以使用
-process就表示当前正在执行的Node.js应用程序，退出之后就没有了
+```
+# 开源项目开发介绍
 
-- process.argv
-  + 第一个参数就是node的可执行文件的绝对路径
-  + 第二个参数就是通过node命令执行的js脚本的绝对路径
+## github与npm
+```
+github 这个网站代码的仓库网站，我们可以把代码存入这个网站。
+1.github 帮你管理代码
+2.公司在使用github做代码的仓库
+3.面试的时候会问（b格比较高的公司）
+github 开源力量做一个开源项目
 
+将成熟的代码打包放到npm 上去面，方便我们的使用
+```
+#4.文件操作
+###4.1箭头函数
+```
+箭头函数就是一种语法糖
+语法糖是一种语法，用这种语法能尝到甜头，能是编程高效
+当函数体有一个参数有返回值的时候
+var foo=function(v){ return v;}
+var foo=v=>v;
+当函数体没有参数有返回值的时候
+var foo=function(){ return v;}
+var foo=()=>v;
+当函数体有多个参数有返回值的时候
+var foo=function(v1,v2){ return v1+v2;}
+var foo=(v1,v2)=>v1+v2;
+当函数体有多个参数没有返回值的时候
+var foo=function(v1,v2){ console.log(v1); console.log(v2);}
+var foo=(v1,v2)=>{console.log(v1); console.log(v2);};
+
+
+
+```
+###4.2文件的读写
+```
+fs操作文件---》读写文件----》io----》node适合高io
+fs能体现出node的强大、优势的模块
+```
+- fs.readFile() 读文件
+- fs.access() 用来判断文件是否存在
+- fs.writeFile()  写文件 
 # 其它
 
 - vsc教程[http://i5ting.github.io/vsc/](vsc教程)
