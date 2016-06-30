@@ -54,7 +54,7 @@ node中异步就是帮你完成多线程编程
 ###3.1 node自带的debugg
 ###3.2 node-inspector
 ###3.3 IDE 调试
-
+- vsc教程[http://i5ting.github.io/vsc/](vsc教程)
 #3.es6
 ###3.1什么是es6？
 ```
