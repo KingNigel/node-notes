@@ -250,7 +250,8 @@ fs能体现出node的强大、优势的模块
 ```
 - fs.readFile() 读文件
 - fs.access() 用来判断文件是否存在
-- fs.writeFile()  写文件 
+- fs.writeFile()  写文件
+
 # 其它
 
 - vsc教程[http://i5ting.github.io/vsc/](vsc教程)
